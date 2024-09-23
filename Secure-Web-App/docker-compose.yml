@@ -1,6 +1,0 @@
-﻿services:
-  secure-web-app.blazor:
-    image: secure-web-app.blazor
-    build:
-      context: .
-      dockerfile: Secure-Web-App.Blazor/Dockerfile
