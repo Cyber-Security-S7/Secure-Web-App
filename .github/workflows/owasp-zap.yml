@@ -17,5 +17,5 @@ jobs:
               uses: zaproxy/action-full-scan@v0.11.0
               with:
                 token: ${{ secrets.GITHUB_TOKEN }}
-                docker_name: 'https://github.com/Cyber-Security-S7/Secure-Web-App/Dockerfile'
+                docker_name: 'lukas100/secure-web-application:latest'
                 target: 'localhost:8080'
