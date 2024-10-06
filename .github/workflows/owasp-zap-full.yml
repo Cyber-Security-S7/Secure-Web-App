@@ -21,5 +21,5 @@ jobs:
       - name: ZAP Scan
         uses: zaproxy/action-full-scan@v0.11.0
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT }}
           target: 'http://localhost:8080'
