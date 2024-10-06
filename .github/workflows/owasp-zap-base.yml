@@ -1,21 +1,29 @@
 name: OWASP ZAP Scan base
 
 on:
-    workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
-    zap_scan:
-        runs-on: ubuntu-latest
-        name: Scan the webapplication
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v4
-              with:
-                ref: main
+  setup_docker:
+    runs-on: ubuntu-latest
+    name: Set up Docker container
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
 
-            - name: ZAP Scan
-              uses: zaproxy/action-baseline@v0.13.0
-              with:
-                token: ${{ secrets.GITHUB_TOKEN }}
-                docker_name: 'lukas100/secure-web-application:latest'
-                target: 'localhost:8080'
+      - name: Set up Docker
+        run: |
+          docker pull lukas100/secure-web-application:latest
+          docker run -d -p 8080:8080 lukas100/secure-web-application:latest
+
+  zap_scan:
+    runs-on: ubuntu-latest
+    needs: setup_docker
+    name: Perform ZAP Scan
+    steps:
+      - name: ZAP Scan
+        uses: zaproxy/action-baseline@v0.13.0
+        with:
+          target: 'http://localhost:8080'
