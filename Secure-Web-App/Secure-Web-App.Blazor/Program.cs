@@ -47,10 +47,16 @@ else
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
+
+    // Set Content Security Policy
+    app.Use((context, next) =>
+    {
+        context.Response.Headers.Append("Content-Security-Policy", "base-uri 'self'; default-src 'self'; img-src data: https:; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests;");
+        return next();
+    });
 }
 
 app.UseHttpsRedirection();
-
 app.UseStaticFiles();
 app.UseAntiforgery();
 
