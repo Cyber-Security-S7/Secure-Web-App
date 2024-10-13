@@ -20,7 +20,7 @@ RUN dotnet build "Secure-Web-App.Blazor/Secure-Web-App.Blazor.csproj" -c Release
 
 # Publish the application to a folder called 'publish'
 FROM build AS publish
-RUN dotnet publish "Secure-Web-App.Blazor/Secure-Web-App.Blazor.csproj" -c Release -o /app/publish --no-restore
+RUN dotnet publish "Secure-Web-App.Blazor/Secure-Web-App.Blazor.csproj" -c Release /p:EnvironmentName=Production -o /app/publish --no-restore
 
 # Final stage: Use the ASP.NET runtime to run the published Blazor Server application
 FROM base AS final
