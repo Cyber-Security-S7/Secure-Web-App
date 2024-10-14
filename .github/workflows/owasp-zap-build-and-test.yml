@@ -1,0 +1,28 @@
+name: OWASP ZAP Scan base
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup_docker:
+    runs-on: ubuntu-latest
+    name: Set up Docker container and run zap scan
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Docker
+        run: |
+          # Build Docker image from Dockerfile in the root of the repository
+          docker build -t my-secure-web-app .
+
+          # Run the built Docker image
+          docker run -d -p 8080:8080 my-secure-web-app
+
+      - name: ZAP Scan
+        uses: zaproxy/action-baseline@v0.13.0
+        with:
+          token: ${{ secrets.PAT }}
+          target: 'http://localhost:8080'
