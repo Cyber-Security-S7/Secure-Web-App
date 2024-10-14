@@ -46,7 +46,7 @@ if (app.Environment.IsDevelopment())
     app.Use((context, next) =>
     {
         const string csp =
-            "base-uri 'self'; default-src 'self'; img-src 'self'; object-src 'none'; script-src 'self'; style-src 'self'; upgrade-insecure-requests; frame-ancestors 'none';";
+            "base-uri 'self'; default-src 'self'; img-src 'self'; object-src 'none'; script-src 'self'; style-src 'self'; upgrade-insecure-requests; frame-ancestors 'none'; form-action 'self'";
         context.Response.Headers.Append("Content-Security-Policy", csp);
         return next();
     });
@@ -61,7 +61,7 @@ else
     app.Use((context, next) =>
     {
         const string csp =
-            "base-uri 'self'; default-src 'self'; img-src 'self'; object-src 'none'; script-src 'self'; style-src 'self'; upgrade-insecure-requests; frame-ancestors 'none';";
+            "base-uri 'self'; default-src 'self'; img-src 'self'; object-src 'none'; script-src 'self'; style-src 'self'; upgrade-insecure-requests; frame-ancestors 'none'; form-action 'self'";
         context.Response.Headers.Append("Content-Security-Policy", csp);
         return next();
     });
