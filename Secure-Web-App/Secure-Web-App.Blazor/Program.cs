@@ -51,7 +51,7 @@ else
     // Set Content Security Policy
     app.Use((context, next) =>
     {
-        var csp = "base-uri 'self'; default-src 'self'; img-src data: https:; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests;";
+        const string csp = "base-uri 'self'; default-src 'self'; img-src data: https:; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests;";
         context.Response.Headers.Append("Content-Security-Policy", csp);
         return next();
     });
