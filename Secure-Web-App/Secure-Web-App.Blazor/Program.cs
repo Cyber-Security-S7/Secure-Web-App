@@ -41,6 +41,15 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
+    
+    // Set Content Security Policy (Comment out if becomes annoying in dev)
+    app.Use((context, next) =>
+    {
+        const string csp =
+            "base-uri 'self'; default-src 'self'; img-src data: https:; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests; frame-ancestors 'none';";
+        context.Response.Headers.Append("Content-Security-Policy", csp);
+        return next();
+    });
 }
 else
 {
@@ -51,7 +60,8 @@ else
     // Set Content Security Policy
     app.Use((context, next) =>
     {
-        const string csp = "base-uri 'self'; default-src 'self'; img-src data: https:; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests;";
+        const string csp =
+            "base-uri 'self'; default-src 'self'; img-src data: https:; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests; frame-ancestors 'none';";
         context.Response.Headers.Append("Content-Security-Policy", csp);
         return next();
     });
