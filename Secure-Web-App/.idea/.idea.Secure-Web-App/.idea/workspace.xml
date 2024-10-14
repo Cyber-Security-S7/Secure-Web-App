@@ -8,7 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9079a6b-7b0f-4522-b7b0-f6140068d3b4" name="Changes" comment="update workspace.xml">
+    <list default="true" id="e9079a6b-7b0f-4522-b7b0-f6140068d3b4" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Secure-Web-App/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secure-Web-App/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Secure-Web-App.Blazor/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Secure-Web-App.Blazor/Program.cs" afterDir="false" />
     </list>
@@ -123,7 +123,7 @@
       <workItem from="1727680487849" duration="3943000" />
       <workItem from="1727684894407" duration="1542000" />
       <workItem from="1728889358755" duration="1470000" />
-      <workItem from="1728891121064" duration="2140000" />
+      <workItem from="1728891121064" duration="2864000" />
     </task>
     <task id="LOCAL-00001" summary="Update .idea">
       <option name="closed" value="true" />
@@ -173,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728890477612</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Update">
+      <option name="closed" value="true" />
+      <created>1728893814860</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1728893814860</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +196,7 @@
     <MESSAGE value="Add Dockerfile" />
     <MESSAGE value="Make const" />
     <MESSAGE value="update workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="update workspace.xml" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
 </project>
