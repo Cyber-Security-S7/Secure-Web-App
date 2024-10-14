@@ -41,31 +41,21 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
-    
-    // Set Content Security Policy (Comment out if becomes annoying in dev)
-    app.Use((context, next) =>
-    {
-        const string csp =
-            "base-uri 'self'; default-src 'self'; img-src 'self'; object-src 'none'; script-src 'self'; style-src 'self'; upgrade-insecure-requests; frame-ancestors 'none'; form-action 'self'";
-        context.Response.Headers.Append("Content-Security-Policy", csp);
-        return next();
-    });
 }
 else
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
-
-    // Set Content Security Policy
-    app.Use((context, next) =>
-    {
-        const string csp =
-            "base-uri 'self'; default-src 'self'; img-src 'self'; object-src 'none'; script-src 'self'; style-src 'self'; upgrade-insecure-requests; frame-ancestors 'none'; form-action 'self'";
-        context.Response.Headers.Append("Content-Security-Policy", csp);
-        return next();
-    });
 }
+// Set Content Security Policy
+app.Use((context, next) =>
+{
+    const string csp =
+        "base-uri 'self'; default-src 'self'; img-src 'self'; object-src 'none'; script-src 'self'; style-src 'self'; upgrade-insecure-requests; frame-ancestors 'none'; form-action 'self'";
+    context.Response.Headers.Append("Content-Security-Policy", csp);
+    return next();
+});
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
