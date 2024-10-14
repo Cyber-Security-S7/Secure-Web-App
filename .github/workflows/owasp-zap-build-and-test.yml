@@ -1,7 +1,11 @@
 name: OWASP ZAP Scan base with self building
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch: 
 
 jobs:
   setup_docker:
