@@ -8,9 +8,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9079a6b-7b0f-4522-b7b0-f6140068d3b4" name="Changes" comment="Add Dockerfile">
-      <change beforePath="$PROJECT_DIR$/../.github/workflows/build-and-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../.github/workflows/build-and-test.yml" afterDir="false" />
+    <list default="true" id="e9079a6b-7b0f-4522-b7b0-f6140068d3b4" name="Changes" comment="Make const">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Secure-Web-App/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Secure-Web-App/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secure-Web-App.Blazor/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Secure-Web-App.Blazor/Properties/launchSettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +20,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "LukasJansen100"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Cyber-Security-S7/Secure-Web-App.git",
+    "accountId": "cf2752af-abeb-4ba2-a17a-c5067ea5084a"
+  }
+}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///home/lukasjansen/Repositories/Cyber Security Advanced/Secure-Web-App/Secure-Web-App/Secure-Web-App.Blazor/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/lukasjansen/Repositories/Cyber Security Advanced/Secure-Web-App/Secure-Web-App/Secure-Web-App.Blazor/Properties/launchSettings.json" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -30,20 +49,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.Secure-Web-App.Blazor: http.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.Secure-Web-App.Blazor: http.executor": "Run",
+    "Docker.../Dockerfile.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Secure-Web-App.Blazor: http">
+}]]></component>
+  <component name="RunManager" selected="Docker.../Dockerfile">
     <configuration name="Secure-Web-App.Blazor: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Secure-Web-App.Blazor/Secure-Web-App.Blazor.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -74,6 +94,20 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="../Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="../Dockerfile" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.../Dockerfile" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -85,6 +119,7 @@
       <updated>1727680483727</updated>
       <workItem from="1727680487849" duration="3943000" />
       <workItem from="1727684894407" duration="1542000" />
+      <workItem from="1728889358755" duration="1003000" />
     </task>
     <task id="LOCAL-00001" summary="Update .idea">
       <option name="closed" value="true" />
@@ -118,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727684303343</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Make const">
+      <option name="closed" value="true" />
+      <created>1728890342870</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1728890342870</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +174,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Update .idea" />
     <MESSAGE value="Add Dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Dockerfile" />
+    <MESSAGE value="Make const" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make const" />
   </component>
 </project>
