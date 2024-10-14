@@ -1,4 +1,4 @@
-name: OWASP ZAP Scan base
+name: OWASP ZAP Scan base with self building
 
 on:
   workflow_dispatch:
