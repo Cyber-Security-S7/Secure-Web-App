@@ -1,0 +1,14 @@
+services:
+  secure-web-application:
+    image: secure-web-application
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    - "8080:8080"
+    - "443:443"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Data Source=/app/data/mydatabase.db;
+    volumes:
+      - ./data:/app/data
