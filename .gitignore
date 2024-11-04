@@ -397,3 +397,5 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 /Secure-Web-App/Secure-Web-App.Blazor/Data/app.db
+
+/data
