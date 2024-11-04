@@ -398,4 +398,7 @@ FodyWeavers.xsd
 *.sln.iml
 /Secure-Web-App/Secure-Web-App.Blazor/Data/app.db
 
-/data
+/data/*
+app.db
+app.db-shm
+app.db-wal
