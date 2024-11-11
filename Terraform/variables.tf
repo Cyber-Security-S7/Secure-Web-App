@@ -31,7 +31,7 @@ variable "image" {
 variable "ports" {
   type        = list(number)
   description = "List of ports to open on the container and the public IP adress."
-  default     = [80, 443, 8080]
+  default     = [80, 443]
 }
 
 variable "cpu_cores" {
