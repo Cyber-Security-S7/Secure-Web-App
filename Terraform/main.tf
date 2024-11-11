@@ -22,15 +22,24 @@ resource "azurerm_container_group" "container" {
   os_type             = "Linux"
   restart_policy      = var.restart_policy
 
+  image_registry_credential {
+    server   = "index.docker.io"
+    username = var.docker_username
+    password = var.docker_password
+  }
+
   container {
     name   = "${var.container_name_prefix}-${random_string.container_name.result}"
     image  = var.image
     cpu    = var.cpu_cores
     memory = var.memory_in_gb
 
-    ports {
-      port     = var.port
-      protocol = "TCP"
+    dynamic "ports" {
+      for_each = var.ports
+      content {
+        port     = ports.value
+        protocol = "TCP"
+      }
     }
   }
 }

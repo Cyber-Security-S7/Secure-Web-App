@@ -28,10 +28,10 @@ variable "image" {
   default     = "lukas100/secure-web-application:latest"
 }
 
-variable "port" {
-  type        = number
-  description = "Port to open on the container and the public IP address."
-  default     = 80
+variable "ports" {
+  type        = list(number)
+  description = "List of ports to open on the container and the public IP adress."
+  default     = [80, 443, 8080]
 }
 
 variable "cpu_cores" {
@@ -55,3 +55,17 @@ variable "restart_policy" {
     error_message = "The restart_policy must be one of the following: Always, Never, OnFailure."
   }
 }
+
+# -=-=-Docker Hub credentials-=-=-
+variable "docker_username" {
+  type        = string
+  description = "Docker Hub username for pulling images."
+  sensitive   = true
+}
+
+variable "docker_password" {
+  type        = string
+  description = "Docker Hub password for pulling images."
+  sensitive   = true
+}
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
