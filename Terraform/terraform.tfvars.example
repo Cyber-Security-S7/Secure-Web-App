@@ -1,0 +1,4 @@
+# Remove .example from this file name and fill in docker user name and password.
+# They are gitignored and can be used by terraform to pull images from Docker Hub using your account. Otherwise you will likely get errors with container pulling.
+docker_username = "your_dockerhub_username"
+docker_password = "your_dockerhub_password"

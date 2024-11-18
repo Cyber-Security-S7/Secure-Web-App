@@ -25,23 +25,24 @@ git clone https://github.com/Cyber-Security-S7/Secure-Web-App.git
 Make sure you run the next terraform commands inside the /Terraform/.. folder so it finds the terraform code.
 
 ### Step 4: Manage terraform secrets
-[TODO for Lukas: Add the .tfvars.example file]
-
-Rename the `.tfvars.example` file into `.tfvars`, and update the docker username and docker password to your credentials.
+Rename the [`terraform.tfvars.example`](terraform.tfvars.example) file into `terraform.tfvars`, and update the docker username and docker password to your credentials (credentials to Dockerhub, make an accout if you do not already have one).
 These are required by Terraform because it needs to pull the docker image from Dockerhub. Even though the repository is public it wants you to authenticate, so make sure you have this configured.
 
 ### Step 5: Initialize Terraform
-
+Not sure if this is required, but just run it.
 ```
 terraform init
 ```
 
 ### Step 6: Make terraform build plan
+This command will create the terraform plan.
+You can also look up how to save the plan if you want, but I usually just run this.
 ```
 terraform plan
 ```
 
 ### Step 7: Apply the build plan
+This command can only be run after you have created the plan.
 ```
 terraform apply
 ```
@@ -66,3 +67,9 @@ You can find them through the Azure portal.
 If you want to make changes to the Terraform code for the monitoring part of blue-teaming, I would recommend that you clone/fork the repository and add the changes. 
 
 I expect that Azure offers several services which you could look into to perform security monitoring. If you want to use open-source / self-hosted monitoring tools, then we will need to find a way to probably push logs from Azure to the monitoring solution, but I don't know exactly how this would work and what is required.
+
+## Azure costs
+Using your Fontys account you get some free credits on Azure which you can use to host this application.
+If you want to save credits, make sure to destroy the Terraform environment in the evenings, as this will save costs on the public IP adress and the docker container.
+
+The only downside here is that everytime you re-build your environment, you'll get a different public IP adress, so you have to notify the red-teamers.
