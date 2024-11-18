@@ -39,6 +39,7 @@ RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
     -subj "/CN=localhost"
 
 # Combine the certificate and the key into a PFX file (which is required by ASP.NET Core)
+# Warning: Not Secure for Production, only used for local development purposes.
 RUN openssl pkcs12 -export -out /app/https/aspnetapp.pfx \
     -inkey /app/https/aspnetapp.key -in /app/https/aspnetapp.crt -password pass:yourpassword
 
@@ -47,7 +48,9 @@ COPY --from=publish /app/publish .
 
 # Set environment variables for the certificate location and password
 ENV ASPNETCORE_Kestrel__Certificates__Default__Path=/app/https/aspnetapp.pfx
+# Warning: Not Secure for Production, only used for local development purposes.
 ENV ASPNETCORE_Kestrel__Certificates__Default__Password=yourpassword
+
 
 # Set the entry point for the Docker container
 ENTRYPOINT ["dotnet", "Secure-Web-App.Blazor.dll"]
