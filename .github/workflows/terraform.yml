@@ -1,20 +1,16 @@
 name: tfsec
-
 on:
-    workflow_dispatch:
-
+  push:
+    branches:
+      - main
+  pull_request:
 jobs:
-    tfsec:
-        name: tfsec
-        runs-on: ubuntu-latest
-        steps:
-            - name: Setup Go
-              uses: actions/setup-go@v5
-              with:
-                go-version: 1.23
-            - name: Checkout
-              uses: actions/checkout@v2
-            - name: Terraform security scan
-              uses: triat/terraform-security-scan@v3.0.0
-              env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  tfsec:
+    name: tfsec
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@master
+      - name: tfsec
+        uses: aquasecurity/tfsec-action@v1.0.0
