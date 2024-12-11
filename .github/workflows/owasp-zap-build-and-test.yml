@@ -23,7 +23,7 @@ jobs:
           docker build -t my-secure-web-app .
 
           # Run the built Docker image
-          docker run -d -p 80:80 my-secure-web-app
+          docker run -d -p 80:80 -p 443:443 my-secure-web-app
 
       - name: ZAP Scan
         uses: zaproxy/action-baseline@v0.13.0
