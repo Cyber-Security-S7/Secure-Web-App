@@ -23,10 +23,10 @@ jobs:
           docker build -t my-secure-web-app .
 
           # Run the built Docker image
-          docker run -d -p 8080:8080 my-secure-web-app
+          docker run -d -p 80:80 my-secure-web-app
 
       - name: ZAP Scan
         uses: zaproxy/action-baseline@v0.13.0
         with:
           token: ${{ secrets.PAT }}
-          target: 'http://localhost:8080'
+          target: 'http://localhost:80'
