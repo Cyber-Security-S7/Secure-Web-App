@@ -16,7 +16,7 @@ jobs:
       - name: Set up Docker
         run: |
           docker pull lukas100/secure-web-application:latest
-          docker run -d -p 80:80 lukas100/secure-web-application:latest
+          docker run -d -p 80:80 -p 443:443 lukas100/secure-web-application:latest
 
       - name: ZAP Scan
         uses: zaproxy/action-full-scan@v0.11.0
