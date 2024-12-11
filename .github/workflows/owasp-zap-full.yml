@@ -19,7 +19,7 @@ jobs:
           docker run -d -p 80:80 -p 443:443 lukas100/secure-web-application:latest
 
       - name: ZAP Scan
-        uses: zaproxy/action-full-scan@v0.11.0
+        uses: zaproxy/action-full-scan@v0.12.0
         with:
           token: ${{ secrets.PAT }}
           target: 'http://localhost:80'
