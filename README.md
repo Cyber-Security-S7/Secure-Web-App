@@ -6,9 +6,6 @@ See the Body of Knowledge document for further explanation on topics, or run the
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Cyber-Security-S7_Secure-Web-App&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Cyber-Security-S7_Secure-Web-App)
 
 
-## Running the application
-TBD
-
 ## Terraform
 Terraform is used to deploy the secure web application to the cloud.
 Terraform is a form of Infrastrucure as Code, where you define the cloud environment from a code perspective, and can build or destroy your environment with simple commands.
