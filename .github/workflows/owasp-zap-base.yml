@@ -19,7 +19,7 @@ jobs:
           docker run -d -p 8080:8080 lukas100/secure-web-application:latest
 
       - name: ZAP Scan
-        uses: zaproxy/action-baseline@v0.13.0
+        uses: zaproxy/action-baseline@v0.14.0
         with:
           token: ${{ secrets.PAT }}
           target: 'http://localhost:8080'
